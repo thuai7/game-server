@@ -1,8 +1,8 @@
 using GameServer.Message;
 
-namespace GameServer.ServerForSdk;
+namespace GameServer.ServerForAgent;
 
-public interface IServerForSdk
+public interface IServerForAgent
 {
     public void Start();
     public void Stop();

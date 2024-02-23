@@ -12,7 +12,7 @@ public interface IGame
         Running,
         Ended
     }
-    public const int TicksPerSecond = 60;
+    public const int TicksPerSecond = 20;
     public GameStatus Status { get; }
     public int ElapsedTicks { get; }
     public IMap GameMap { get; }
