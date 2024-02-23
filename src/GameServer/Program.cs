@@ -13,7 +13,7 @@ class Program
 
         Version version = typeof(Program).Assembly.GetName().Version ?? new Version(0, 0, 0, 0);
         Log.Information($"THUAI7 GameServer v{version.Major}.{version.Minor}.{version.Build}");
-        Log.Information("Copyright (c) ");
+        Log.Information("Copyright (c) 2024 THUAI7 Team");
 
         // TODO: Create and activate game server
 
