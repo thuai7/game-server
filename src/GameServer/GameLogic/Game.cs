@@ -1,6 +1,11 @@
 namespace GameServer.GameLogic;
 
-public class Game : IGame
+public partial class Game : IGame
 {
-    // TODO: Implement
+
+    public void Tick()
+    {
+        // TODO:Implement
+        throw new NotImplementedException();
+    }
 }
