@@ -2,7 +2,7 @@ namespace GameServer.GameLogic;
 
 public class WeaponFactory
 {
-    static IWeapon CreateFromItem()
+    static IWeapon CreateFromItem(IItem Item)
     {
         // TODO: Implement
         throw new NotImplementedException();

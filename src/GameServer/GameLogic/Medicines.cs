@@ -2,24 +2,25 @@ namespace GameServer.GameLogic;
 
 public class MedicineFactory
 {
-    static IMedicine CreateFromItem()
+    static IMedicine CreateFromItem(IItem item)
     {
         // TODO: Implement
         throw new NotImplementedException();
     }
 }
 
-public class Bandage : IMedicine
+public class Medicine : IMedicine
 {
-    // TODO: Implement
-}
+    public int Heal = 30;
 
-public class FirstAidKit : IMedicine
-{
-    // TODO: Implement
-}
+    public Medicine()
+    {
+        // Do nothing
+    }
 
-public class EnergyDrink : IMedicine
-{
-    // TODO: Implement
+    public void Use(IPlayer owner)
+    {
+        // TODO: Implement
+        throw new NotImplementedException();
+    }
 }
