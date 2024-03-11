@@ -1,8 +1,17 @@
+using GameServer.GameLogic;
+using LevelDB;
+
 namespace GameServer.Recorder;
 
 public class Recorder : IRecorder
 {
-    public void RecordInitialInformation()
+    public DB? LevelDB { get; } = null;
+
+    public void CreateNewRecord(string recordName)
+    {
+        throw new NotImplementedException();
+    }
+    public void RecordInitialInformation(IGame game)
     {
         throw new NotImplementedException();
     }
