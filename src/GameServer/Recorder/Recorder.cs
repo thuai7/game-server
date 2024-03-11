@@ -5,10 +5,13 @@ namespace GameServer.Recorder;
 
 public class Recorder : IRecorder
 {
-    public DB? LevelDB { get; } = null;
+    public DB? LevelDB { get; private set; } = null;
 
     public void CreateNewRecord(string recordName)
     {
+        LevelDB?.Close();
+        var options = new Options { CreateIfMissing = true };
+        LevelDB = new DB(options, recordName);
         throw new NotImplementedException();
     }
     public void RecordInitialInformation(IGame game)
