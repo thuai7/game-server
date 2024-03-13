@@ -1,10 +1,16 @@
 namespace GameServer.GameLogic;
 
 /// <summary>
-/// Factory for creating armor from items.
+/// Factory for converting between items and armors.
 /// </summary>
 public class ArmorFactory
 {
+    /// <summary>
+    /// Create armor from an item.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
     public static IArmor CreateFromItem(IItem item)
     {
         if (item.Kind != IItem.ItemKind.Armor)
@@ -14,10 +20,16 @@ public class ArmorFactory
 
         int maxHealth = item.ItemSpecificId switch
         {
-            0 => 50,
+            // TODO: Create a mapping from item specific id to max health
             _ => throw new ArgumentException($"Item specific id {item.ItemSpecificId} is not valid for armor.")
         };
-        return new Armor(maxHealth);
+        return new Armor(item.ItemSpecificId, maxHealth);
+    }
+
+    public static IItem ToItem(IArmor armor, int count)
+    {
+        return new Item(IItem.ItemKind.Armor, armor.ItemSpecificId, count);
+
     }
 }
 
@@ -26,11 +38,13 @@ public class ArmorFactory
 /// </summary>
 public class Armor : IArmor
 {
+    public int ItemSpecificId { get; }
     public int Health { get; private set; }
     public int MaxHealth { get; }
 
-    public Armor(int maxHealth)
+    public Armor(int itemSpecificId, int maxHealth)
     {
+        ItemSpecificId = itemSpecificId;
         MaxHealth = maxHealth;
         Health = maxHealth;
     }

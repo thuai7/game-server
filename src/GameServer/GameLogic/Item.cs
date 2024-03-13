@@ -13,6 +13,12 @@ public class Item : IItem
         };
     }
 
+    /// <summary>
+    /// Constructor for an item.
+    /// </summary>
+    /// <param name="kind"></param>
+    /// <param name="itemSpecificId"></param>
+    /// <param name="count"></param>
     public Item(IItem.ItemKind kind, int itemSpecificId, int count)
     {
         Kind = kind;

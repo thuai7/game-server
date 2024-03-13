@@ -2,7 +2,6 @@ namespace GameServer.GameLogic;
 
 public class Block : IBlock
 {
-    // TODO: Implement
     public bool IsWall { get; }
     public List<IItem> Items { get; }
 
@@ -12,14 +11,52 @@ public class Block : IBlock
         Items = new();
     }
 
-    public void GenerateItems()
+    public void GenerateItems(IItem.ItemKind kind, int itemSpecificId, int count)
     {
         if (IsWall)
         {
-            return;
+            throw new InvalidOperationException("Cannot generate items in a wall");
         }
 
-        // TODO: Generate items
-        throw new NotImplementedException("GenerateItems() is not implemented.");
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].Kind == kind && Items[i].ItemSpecificId == itemSpecificId)
+            {
+                Items[i].Count += count;
+                return;
+            }
+        }
+
+        Items.Add(new Item(kind, itemSpecificId, count));
+    }
+
+    public void RemoveItems(IItem.ItemKind kind, int itemSpecificId, int count)
+    {
+        if (IsWall)
+        {
+            throw new InvalidOperationException("Cannot remove items from a wall");
+        }
+
+        if (!Items.Any(item => item.Kind == kind && item.ItemSpecificId == itemSpecificId))
+        {
+            throw new ArgumentException($"Item {itemSpecificId} not found");
+        }
+
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].Kind == kind && Items[i].ItemSpecificId == itemSpecificId)
+            {
+                if (Items[i].Count < count)
+                {
+                    throw new ArgumentException($"No enough items: {itemSpecificId}");
+                }
+
+                Items[i].Count -= count;
+                if (Items[i].Count == 0)
+                {
+                    Items.RemoveAt(i);
+                }
+            }
+        }
     }
 }
