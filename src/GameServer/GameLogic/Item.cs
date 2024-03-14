@@ -12,6 +12,10 @@ public class Item : IItem
             _ => throw new NotImplementedException()
         };
     }
+    public int Weight
+    {
+        get => Count * WeightOfSingleItem;
+    }
 
     /// <summary>
     /// Constructor for an item.
