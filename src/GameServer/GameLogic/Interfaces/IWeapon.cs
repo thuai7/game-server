@@ -23,9 +23,25 @@ public interface IWeapon
     public int CoolDownTicks { get; }
 
     /// <summary>
+    /// Whether the weapon is available for attack at current tick.
+    /// </summary>
+    public bool IsAvailable { get; }
+
+    /// <summary>
+    /// The number of ticks until the weapon is available for attack.
+    /// </summary>
+    public int TicksUntilAvailable { get; }
+
+    /// <summary>
     /// Attack the target.
     /// </summary>
     /// <param name="owner"></param>
     /// <param name="target"></param>
     public void Attack(IPlayer owner, Point<float> target);
+
+    /// <summary>
+    /// Update the cooldown of the weapon.
+    /// Should be called every tick.
+    /// </summary>
+    public void UpdateCoolDown();
 }

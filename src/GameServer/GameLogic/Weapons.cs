@@ -34,9 +34,22 @@ public class Fist : IWeapon
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
     public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
+
     public void Attack(IPlayer owner, Point<float> target)
     {
         throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
     }
 }
 
@@ -46,9 +59,21 @@ public class ShotGun : IWeapon
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
     public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
     public void Attack(IPlayer owner, Point<float> target)
     {
         throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
     }
 }
 
@@ -58,9 +83,21 @@ public class SubMachineGun : IWeapon
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
     public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
     public void Attack(IPlayer owner, Point<float> target)
     {
         throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
     }
 }
 
@@ -70,9 +107,21 @@ public class SniperRifle : IWeapon
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
     public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
     public void Attack(IPlayer owner, Point<float> target)
     {
         throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
     }
 }
 
@@ -82,8 +131,20 @@ public class AssaultRifle : IWeapon
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
     public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
     public void Attack(IPlayer owner, Point<float> target)
     {
         throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
     }
 }
