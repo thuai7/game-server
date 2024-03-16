@@ -5,7 +5,7 @@ namespace GameServer.GameLogic;
 
 public class BackPack : IBackPack
 {
-    private readonly Dictionary<object,int>? _backpack;// TODO: Implement
+    public Dictionary<object,int>? _backpack;// TODO: Implement
 
     public double capacity;
     public double totalCapacity()
