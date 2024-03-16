@@ -28,7 +28,7 @@ public interface IBackPack
     /// add supplies, determine whether the capacity is exceeded
     /// </summary>
     /// <param name="supply"></param>
-    /// <param name="numb"></param>the number of the suppply
+    /// <param name="numb">the number of the suppply</param>
     /// <returns></returns>
     public bool addSupplies(object supply, int numb);
 
