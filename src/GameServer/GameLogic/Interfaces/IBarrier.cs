@@ -1,6 +1,11 @@
+using System.Numerics;
+
 namespace GameServer.GameLogic;
 
 public interface IBarrier
 {
-    // TODO: Define the interface
+    /// <summary>
+    /// generate the chunk Id of Barrier
+    /// </summary>
+    public void GenerateBarrier();
 }
