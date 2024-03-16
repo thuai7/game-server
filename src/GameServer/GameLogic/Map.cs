@@ -32,4 +32,4 @@ public class Map : IMap
         safeZone.SafeZoneUpdate(8 * times); // TODO: Implement
     }
 }
-}
+
