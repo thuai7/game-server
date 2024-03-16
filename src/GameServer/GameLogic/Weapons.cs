@@ -14,22 +14,26 @@ public class Fist : IWeapon
     // TODO: Implement
 }
 
-public class ShotGun : IWeapon
+public class S686 : IWeapon
 {
+    //shotgun
     // TODO: Implement
 }
 
-public class SubMachineGun : IWeapon
+public class Vectory : IWeapon
 {
+    //submachine gun
     // TODO: Implement
 }
 
-public class SniperRifle : IWeapon
+public class M16 : IWeapon
 {
+    //rifle
     // TODO: Implement
 }
 
-public class AssaultRifle : IWeapon
+public class AWM : IWeapon
 {
+    //sniper rifle
     // TODO: Implement
 }
