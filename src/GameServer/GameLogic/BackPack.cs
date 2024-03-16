@@ -5,7 +5,7 @@ namespace GameServer.GameLogic;
 
 public class BackPack : IBackPack
 {
-    public Dictionary<object,int>? _backpack;// TODO: Implement
+    public Dictionary<object, int> _backpack = new Dictionary<object, int>();// TODO: Implement
 
     public double capacity;
     public double totalCapacity()
@@ -29,7 +29,7 @@ public class BackPack : IBackPack
         return true;// TODO: Implement
     }
 
-    public bool removeSupplies(object supply, double numb)
+    public bool removeSupplies(object supply, int numb)
     {
         _backpack.Remove(supply);
         return true;// TODO: Implement

@@ -39,5 +39,5 @@ public interface IBackPack
     /// <param name="supply"></param>
     /// <param name="numb"></param>
     /// <returns></returns>
-    public bool removeSupplies(object supply,double numb);
+    public bool removeSupplies(object supply, int numb);
 }
