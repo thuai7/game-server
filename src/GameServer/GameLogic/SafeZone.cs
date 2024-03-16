@@ -1,19 +1,21 @@
 using System.Numerics;
 
-namespace GameServer.GameLogic;
-public class SafeZone : ISafeZone
+namespace GameServer.GameLogic
 {
-    
-    public Vector<int> safeChunk = new Vector<int>();
-
-    public bool IsSafe(Position position)
+    public class SafeZone : ISafeZone
     {
-        // TODO: Implement
-        return true;
-    }
+        public Vector<int> safeChunk = new Vector<int>();
 
-    public void SafeZoneUpdate(int numb)
-    {
-        // TODO: Implement
+        public bool IsSafe(Position position)
+        {
+            // TODO: Implement
+            return true;
+        }
+
+        public void SafeZoneUpdate(int numb)
+        {
+            // TODO: Implement
+        }
     }
 }
+
