@@ -4,7 +4,7 @@ namespace GameServer.GameLogic;
 
 public class Barrier : IBarrier
 {
-    public Vector<int> BarrierChukn = new Vector<int>();// TODO: Implement
+    public Vector<int> BarrierChunk = new Vector<int>();// TODO: Implement
 
     public void GenerateBarrier()
     {
