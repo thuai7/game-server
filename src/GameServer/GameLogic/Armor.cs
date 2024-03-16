@@ -2,5 +2,15 @@ namespace GameServer.GameLogic;
 
 public class Armor : IArmor
 {
-    // TODO: Implement
+    public Type armorType;
+
+    public int armorPoints()
+    {
+        return 0;// TODO: Implement
+    }
+
+    public void Injured()
+    {
+        // TODO: Implement
+    }
 }

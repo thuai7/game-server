@@ -30,7 +30,7 @@ public interface IBackPack
     /// <param name="supply"></param>
     /// <param name="numb"></param> the number of the suppply
     /// <returns></returns>
-    public bool addSupplies(object supply, double numb);
+    public bool addSupplies(object supply, int numb);
 
 
     /// <summary>

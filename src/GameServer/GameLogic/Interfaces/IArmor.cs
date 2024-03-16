@@ -8,11 +8,6 @@ public interface IArmor
         PRIMARY_ARMOR,
         PREMIUM_ARMOR
     };
-    /// <summary>
-    /// return the type of the armor
-    /// </summary>
-    /// <returns></returns>
-    public Type armorType();
 
     /// <summary>
     /// return current points of the armor
