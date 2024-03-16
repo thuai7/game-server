@@ -8,7 +8,7 @@ public class SafeZone : ISafeZone
 
     public bool IsSafe(Position position)
     {
-        return true;// TODO: Implement
+        return true; // TODO: Implement
     }
 
     public void SafeZoneUpdate(int numb)
