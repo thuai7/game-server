@@ -3,12 +3,10 @@ namespace GameServer.GameLogic;
 public abstract class IMedicine
 {
     // TODO: Define the interface
+
+    // the weight of medicine
     public double weight;
 
-    public void setWeight(double w)
-    {
-        weight = w;
-    }
     /// <summary>
     /// implement specific function, sunch as recover health or speed up
     /// </summary>
