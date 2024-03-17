@@ -2,13 +2,9 @@ namespace GameServer.GameLogic;
 
 public abstract class IMedicine
 {
-    // TODO: Define the interface
-
-    // the weight of medicine
-    public double weight;
-
     /// <summary>
-    /// implement specific function, sunch as recover health or speed up
+    /// Use the medicine.
     /// </summary>
-    public abstract void Function();
+    /// <param name="owner">Owner of the medicine.</param>
+    public void Use(IPlayer owner);
 }

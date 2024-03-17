@@ -1,34 +1,37 @@
-using System.Numerics;
-
 namespace GameServer.GameLogic;
 
-public interface IBackPack
+public interface IBlock
 {
     /// <summary>
-    /// Capacity of the backpack.
+    /// Whether the block is a wall.
     /// </summary>
-    public int Capacity { get; }
+    public bool IsWall { get; }
 
     /// <summary>
-    /// Current weight of the backpack.
+    /// Width of the block.
     /// </summary>
-    public int CurrentWeight { get; }
+    public const float Width = 1;
 
     /// <summary>
-    /// Items in the backpack.
+    /// Height of the block.
+    /// </summary>
+    public const float Height = 1;
+
+    /// <summary>
+    /// Items in the block.
     /// </summary>
     public List<IItem> Items { get; }
 
     /// <summary>
-    /// Add items to the backpack.
+    /// Generate items in the block.
     /// </summary>
     /// <param name="kind"></param>
     /// <param name="itemSpecificId"></param>
     /// <param name="count"></param>
-    public void AddItems(IItem.ItemKind kind, int itemSpecificId, int count);
+    public void GenerateItems(IItem.ItemKind kind, int itemSpecificId, int count);
 
     /// <summary>
-    /// Remove items from the backpack.
+    /// Remove items from the block.
     /// </summary>
     /// <param name="kind"></param>
     /// <param name="itemSpecificId"></param>

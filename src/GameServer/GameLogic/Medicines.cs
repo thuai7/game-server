@@ -3,27 +3,24 @@ namespace GameServer.GameLogic;
 
 public class Bandage : IMedicine
 {
-    // TODO: Implement
-    public override void Function()
+    static IMedicine CreateFromItem(IItem item)
     {
         throw new NotImplementedException();
     }
 }
 
-public class FirstAid : IMedicine
+public class Medicine : IMedicine
 {
-    // TODO: Implement
-    public override void Function()
-    {
-        throw new NotImplementedException();
-    }
-}
+    public int Heal = 30;
 
-public class Beverage : IMedicine
-{
-    // TODO: Implement
-    public override void Function()
+    public Medicine()
     {
+        // Do nothing
+    }
+
+    public void Use(IPlayer owner)
+    {
+        // TODO: Implement
         throw new NotImplementedException();
     }
 }

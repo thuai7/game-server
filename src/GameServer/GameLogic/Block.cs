@@ -1,40 +1,21 @@
-using System.Numerics;
-using System.Runtime.InteropServices;
-
 namespace GameServer.GameLogic;
 
-public class BackPack : IBackPack
+public class Block : IBlock
 {
-    public int Capacity { get; }
-    public int CurrentWeight
-    {
-        get
-        {
-            int currentWeight = 0;
-            foreach (IItem item in Items)
-            {
-                currentWeight += item.Count * item.WeightOfSingleItem;
-            }
-            return currentWeight;
-        }
-    }
+    public bool IsWall { get; }
     public List<IItem> Items { get; }
 
-    /// <summary>
-    /// Constructor of the backpack.
-    /// </summary>
-    /// <param name="capacity">Capacity of the backpack</param>
-    public BackPack(int capacity)
+    public Block(bool isWall)
     {
-        Capacity = capacity;
+        IsWall = isWall;
         Items = new();
     }
 
-    public void AddItems(IItem.ItemKind kind, int itemSpecificId, int count)
+    public void GenerateItems(IItem.ItemKind kind, int itemSpecificId, int count)
     {
-        if (CurrentWeight + new Item(kind, itemSpecificId, count).Weight > Capacity)
+        if (IsWall)
         {
-            throw new InvalidOperationException($"No enough capacity for the item {itemSpecificId}");
+            throw new InvalidOperationException("Cannot generate items in a wall");
         }
 
         for (int i = 0; i < Items.Count; i++)
@@ -51,6 +32,10 @@ public class BackPack : IBackPack
 
     public void RemoveItems(IItem.ItemKind kind, int itemSpecificId, int count)
     {
+        if (IsWall)
+        {
+            throw new InvalidOperationException("Cannot remove items from a wall");
+        }
 
         if (!Items.Any(item => item.Kind == kind && item.ItemSpecificId == itemSpecificId))
         {
