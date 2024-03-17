@@ -1,25 +1,29 @@
 namespace GameServer.GameLogic;
 
-public class MedicineFactory
-{
-    static IMedicine CreateFromItem()
-    {
-        // TODO: Implement
-        throw new NotImplementedException();
-    }
-}
 
 public class Bandage : IMedicine
 {
     // TODO: Implement
+    public override void Function()
+    {
+        throw new NotImplementedException();
+    }
 }
 
-public class FirstAidKit : IMedicine
+public class FirstAid : IMedicine
 {
     // TODO: Implement
+    public override void Function()
+    {
+        throw new NotImplementedException();
+    }
 }
 
-public class EnergyDrink : IMedicine
+public class Beverage : IMedicine
 {
     // TODO: Implement
+    public override void Function()
+    {
+        throw new NotImplementedException();
+    }
 }
