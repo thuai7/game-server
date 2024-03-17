@@ -3,10 +3,9 @@ namespace GameServer.GameLogic;
 public class Player : IPlayer
 {
     // TODO: Implement
-    public double health;
-    public double speed;
-    public Armor playerArmor = new Armor();
-    public Position playerPosition = new Position();
-    public IWeapon playerWeapon = new Fist();
-    public BackPack playerBackpack = new BackPack();
+    public double Health;
+    public double Speed;
+    public Armor? PlayerArmor = null;
+    public Position PlayerPosition = new Position();
+    public IWeapon PlayerWeapon = new Fist();
 }
