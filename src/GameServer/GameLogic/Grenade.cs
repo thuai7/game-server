@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace GameServer.GameLogic;
 
 public class Grenade : IGrenade
@@ -9,8 +7,8 @@ public class Grenade : IGrenade
     //爆炸的tick
     public int explodeTick { get; set; }
     //是否已经爆炸，初始为false
-    public bool hasExploded { get; set; } = false;   
-    
+    public bool hasExploded { get; set; } = false;
+
 
     //构造函数：初始化手雷的爆炸位置、扔出的tick
     public Grenade(Position position, int throwTick)
@@ -29,14 +27,15 @@ public class Grenade : IGrenade
             hasExploded = true;
             foreach (Player player in players)
             {
-                player.TakeDamage(ComputeGrenadeDamage(position, player.playerPosition));
+                player.TakeDamage(ComputeGrenadeDamage(position, player.PlayerPosition));
             }
             return true;
         }
         return false;
     }
 
-    private double ComputeGrenadeDamage(Position explodePosition, Position playerPosition){
+    private int ComputeGrenadeDamage(Position explodePosition, Position playerPosition){
         //TODO: implement
+        throw new NotImplementedException();
     }
 }

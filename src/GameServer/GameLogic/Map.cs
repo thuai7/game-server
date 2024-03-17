@@ -5,13 +5,12 @@ namespace GameServer.GameLogic;
 public class Map : IMap
 {
     public List<List<IBlock>> MapChunk { get; } = new();
-    public ISafeZone SafeZone = new SafeZone();
-    private readonly int codeBarrier = 1;
+    public ISafeZone SafeZone => throw new NotImplementedException();
 
     public void GenerateMap()
     {
-        // TODO: Implement
-        throw new NotImplementedException();
+        GenerateSupplies();
+        GenerateBarrier();
     }
 
     public void GenerateSupplies()
@@ -22,11 +21,6 @@ public class Map : IMap
 
     private void GenerateBarrier() => throw new NotImplementedException();
 
-    public void GenerateMap()
-    {
-        GenerateSupplies();
-        GenerateBarrier();
-    }
 
     public void GenerateWalls()
     {
@@ -48,7 +42,7 @@ public class Map : IMap
         {
             for (int j = sty; j <= edy; j++)
             {
-                if (MapChunk[i][j].IsWall == true 
+                if (MapChunk[i][j].IsWall == true
                 && CollisionDetector.checkCross(a, b, i, j))
                 {
                     return false;
