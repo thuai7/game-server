@@ -6,7 +6,6 @@ public class Map : IMap
 {
     public List<List<IBlock>> MapChunk { get; } = new();
     public ISafeZone SafeZone => throw new NotImplementedException();
-    private readonly int codeBarrier = 1;
 
     public void GenerateMap()
     {
