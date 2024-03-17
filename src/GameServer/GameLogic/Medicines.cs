@@ -1,29 +1,42 @@
 namespace GameServer.GameLogic;
 
-
-public class Bandage : IMedicine
+public class MedicineFactory
 {
-    // TODO: Implement
-    public override void Function()
+    /// <summary>
+    /// Create a medicine from an item.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public static IMedicine CreateFromItem(IItem item)
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// Convert a medicine to an item.
+    /// </summary>
+    /// <param name="medicine"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public static IItem ToItem(IMedicine medicine)
     {
         throw new NotImplementedException();
     }
 }
 
-public class FirstAid : IMedicine
+public class Medicine : IMedicine
 {
-    // TODO: Implement
-    public override void Function()
-    {
-        throw new NotImplementedException();
-    }
-}
+    public int Heal = 30;
 
-public class Beverage : IMedicine
-{
-    // TODO: Implement
-    public override void Function()
+    public Medicine()
     {
+        // Do nothing
+    }
+
+    public void Use(IPlayer owner)
+    {
+        // TODO: Implement
         throw new NotImplementedException();
     }
 }

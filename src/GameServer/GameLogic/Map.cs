@@ -1,18 +1,23 @@
-using System.Numerics;
 using GameServer.Engine.Collision;
 
 namespace GameServer.GameLogic;
 
 public class Map : IMap
 {
-    public Vector<Vector<int> > mapChunk=new Vector<Vector<int> >();
-    public Dictionary<Position, object> Supplies = new Dictionary<Position, object>();
-    public SafeZone safeZone = new SafeZone();
+    public List<List<IBlock>> MapChunk { get; } = new();
+    public ISafeZone SafeZone = new SafeZone();
     private readonly int codeBarrier = 1;
+
+    public void GenerateMap()
+    {
+        // TODO: Implement
+        throw new NotImplementedException();
+    }
 
     public void GenerateSupplies()
     {
         // TODO: Implement
+        throw new NotImplementedException();
     }
 
     private void GenerateBarrier() => throw new NotImplementedException();
@@ -23,18 +28,17 @@ public class Map : IMap
         GenerateBarrier();
     }
 
-    public void updateSupplies()
+    public void GenerateWalls()
     {
         // TODO: Implement
+        throw new NotImplementedException();
     }
 
-    public void updateSafeZone()
+    public void UpdateSupplies()
     {
-        int times = 0; // The safe zone will be reduced in several times
-        safeZone.SafeZoneUpdate(8 * times); // TODO: Implement
+        // TODO: Implement
+        throw new NotImplementedException();
     }
-
-    
 
     //计算两个Position是否连通（无掩体阻挡）（mapChunk[a][b]为1表示(a,b)格子有掩体）
     public bool IsConnected(Position a, Position b)
@@ -44,7 +48,7 @@ public class Map : IMap
         {
             for (int j = sty; j <= edy; j++)
             {
-                if (mapChunk[i][j] == codeBarrier 
+                if (MapChunk[i][j].IsWall == true 
                 && CollisionDetector.checkCross(a, b, i, j))
                 {
                     return false;
@@ -52,9 +56,5 @@ public class Map : IMap
             }
         }
         return true;
-
     }
-
-
 }
-
