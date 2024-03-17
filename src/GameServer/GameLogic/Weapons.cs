@@ -31,17 +31,54 @@ public class WeaponFactory
 public class Fist : IWeapon
 {
     // TODO: Implement
+    public float Range => throw new NotImplementedException();
+    public int Damage => throw new NotImplementedException();
+    public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
+
+    public void Attack(IPlayer owner, Point<float> target)
+    {
+        throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
+    }
 }
 
 public class ShotGun : IWeapon
 {
-    //shotgun
     // TODO: Implement
+    public float Range => throw new NotImplementedException();
+    public int Damage => throw new NotImplementedException();
+    public int CoolDownTicks => throw new NotImplementedException();
+    public bool IsAvailable
+    {
+        get => (TicksUntilAvailable == 0);
+    }
+    public int TicksUntilAvailable { get; private set; }
+    public void Attack(IPlayer owner, Point<float> target)
+    {
+        throw new NotImplementedException();
+    }
+    public void UpdateCoolDown()
+    {
+        if (TicksUntilAvailable > 0)
+        {
+            TicksUntilAvailable--;
+        }
+    }
 }
 
 public class SubMachineGun : IWeapon
 {
-    //submachine gun
     // TODO: Implement
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
@@ -64,9 +101,8 @@ public class SubMachineGun : IWeapon
     }
 }
 
-public class M16 : IWeapon
+public class SniperRifle : IWeapon
 {
-    //rifle
     // TODO: Implement
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();
@@ -89,9 +125,8 @@ public class M16 : IWeapon
     }
 }
 
-public class AWM : IWeapon
+public class AssaultRifle : IWeapon
 {
-    //sniper rifle
     // TODO: Implement
     public float Range => throw new NotImplementedException();
     public int Damage => throw new NotImplementedException();

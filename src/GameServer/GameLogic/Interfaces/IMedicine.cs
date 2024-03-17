@@ -1,6 +1,6 @@
 namespace GameServer.GameLogic;
 
-public abstract class IMedicine
+public interface IMedicine
 {
     /// <summary>
     /// Use the medicine.

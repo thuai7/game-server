@@ -1,35 +1,31 @@
-using System.Numerics;
-
 namespace GameServer.GameLogic;
 
 public class Map : IMap
 {
 
-    public Vector<int> mapChunk = new Vector<int>();
-    public Dictionary<Position, object> Supplies = new Dictionary<Position, object>();
-    public Barrier barrier = new Barrier();
-    public SafeZone safeZone = new SafeZone();
+    public List<List<IBlock>> MapChunk { get; } = new();
+
+    public void GenerateMap()
+    {
+        // TODO: Implement
+        throw new NotImplementedException();
+    }
 
     public void GenerateSupplies()
     {
         // TODO: Implement
+        throw new NotImplementedException();
     }
 
-    public void GenerateMap()
-    {
-        GenerateSupplies();
-        barrier.GenerateBarrier(); // TODO: Implement
-    }
-
-    public void updateSupplies()
+    public void GenerateWalls()
     {
         // TODO: Implement
+        throw new NotImplementedException();
     }
 
-    public void updateSafeZone()
+    public void UpdateSupplies()
     {
-        int times = 0; // The safe zone will be reduced in several times
-        safeZone.SafeZoneUpdate(8 * times); // TODO: Implement
+        // TODO: Implement
+        throw new NotImplementedException();
     }
 }
-

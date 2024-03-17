@@ -1,9 +1,25 @@
 namespace GameServer.GameLogic;
 
-
-public class Bandage : IMedicine
+public class MedicineFactory
 {
-    static IMedicine CreateFromItem(IItem item)
+    /// <summary>
+    /// Create a medicine from an item.
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public static IMedicine CreateFromItem(IItem item)
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// Convert a medicine to an item.
+    /// </summary>
+    /// <param name="medicine"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public static IItem ToItem(IMedicine medicine)
     {
         throw new NotImplementedException();
     }

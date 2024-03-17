@@ -3,22 +3,28 @@ namespace GameServer.GameLogic;
 public interface IMap
 {
     /// <summary>
-    /// generate the supplies and their position
+    /// Chunks in the map
     /// </summary>
-    public void GenerateSupplies();
+    public List<List<IBlock>> MapChunk { get; }
 
     /// <summary>
-    /// generate the barrier and supplies
+    /// Generate the barrier and supplies
     /// </summary>
     public void GenerateMap();
 
     /// <summary>
-    /// update the supplies in map
+    /// Generate the supplies and their position
     /// </summary>
-    public void updateSupplies();
+    public void GenerateSupplies();
 
     /// <summary>
-    /// update the safe zone
+    /// Generate the walls in the map
     /// </summary>
-    public void updateSafeZone();
+    public void GenerateWalls();
+
+    /// <summary>
+    /// Update the supplies in map
+    /// </summary>
+    public void UpdateSupplies();
+
 }
