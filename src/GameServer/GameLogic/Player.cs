@@ -6,13 +6,13 @@ public class Player : IPlayer
     public int Health;
     public double Speed;
     public Armor? PlayerArmor = null;
-    public Position PlayerPosition = new Position();
+    public Position PlayerPosition  => throw new NotImplementedException();
     public IWeapon PlayerWeapon = new Fist();
-    
+    public IBackPack PlayerBackPack => throw new NotImplementedException();
+
     public void TakeDamage(int damage)
     {
         //TODO: implement
-        //return not implemented error
         throw new NotImplementedException();
     }
 }
