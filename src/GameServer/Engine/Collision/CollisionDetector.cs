@@ -89,7 +89,7 @@ public class CollisionDetector
         for (int i = 1; i < positions.Length; i++)
         {
             double currentCrossProduct = CrossProduct(a, b, positions[i]);
-            if (currentCrossProduct*abCrossProduct<0)
+            if (currentCrossProduct * abCrossProduct < 0)
             {
                 return false; // Points are not on the same side
             }
@@ -100,7 +100,7 @@ public class CollisionDetector
     public static bool checkCross(Position a, Position b, int i, int j)
     {
         Position[] positions = new Position[] { new Position(i, j), new Position(i, j + 1), new Position(i + 1, j), new Position(i + 1, j + 1) };
-        if(!AreOnSameSide(a, b, positions))
+        if (!AreOnSameSide(a, b, positions))
         {
             return false;
         }
