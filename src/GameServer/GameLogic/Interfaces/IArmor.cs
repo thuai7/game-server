@@ -1,22 +1,29 @@
 namespace GameServer.GameLogic;
 
+/// <summary>
+/// Interface for armor.
+/// </summary>
 public interface IArmor
 {
-    public enum Type
-    {
-        NO_ARMOR,
-        PRIMARY_ARMOR,
-        PREMIUM_ARMOR
-    };
+    /// <summary>
+    /// Id of the armor corresponding to the item.
+    /// </summary>
+    public int ItemSpecificId { get; }
 
     /// <summary>
-    /// return current points of the armor
+    /// Health of the armor.
     /// </summary>
-    /// <returns></returns>
-    public int armorPoints();
+    public int Health { get; }
 
     /// <summary>
-    /// when the player was injured, call this function to change the points of the armor
+    /// Maximum health of the armor.
     /// </summary>
-    public void Injured();
+    public int MaxHealth { get; }
+
+    /// <summary>
+    /// Deal some damage.
+    /// </summary>
+    /// <param name="Damage"></param>
+    /// <returns>Damage dealt by player</returns>
+    public int Hurt(int Damage);
 }
