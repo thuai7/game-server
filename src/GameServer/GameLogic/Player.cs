@@ -6,9 +6,17 @@ public class Player : IPlayer
     public int Health;
     public double Speed;
     public Armor? PlayerArmor = null;
-    public Position PlayerPosition => throw new NotImplementedException();
+    public Position PlayerPosition { get; set; }
     public IWeapon PlayerWeapon = new Fist();
     public IBackPack PlayerBackPack => throw new NotImplementedException();
+
+    //生成构造函数
+    public Player(int health, double speed, Position position)
+    {
+        Health = health;
+        Speed = speed;
+        PlayerPosition = position;
+    }
 
     public void TakeDamage(int damage)
     {

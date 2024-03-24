@@ -10,5 +10,9 @@
             this.x = x;
             this.y = y;
         }
+        public static double Distance(Position a, Position b)
+        {
+            return Math.Sqrt(Math.Pow(a.x - b.x, 2) + Math.Pow(a.y - b.y, 2));
+        }
     }
 }
