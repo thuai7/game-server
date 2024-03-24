@@ -27,8 +27,6 @@ public class MedicineFactory
 
 public class Medicine : IMedicine
 {
-    public int Heal = 30;
-
     public Medicine()
     {
         // Do nothing
@@ -36,7 +34,6 @@ public class Medicine : IMedicine
 
     public void Use(IPlayer owner)
     {
-        // TODO: Implement
-        throw new NotImplementedException();
+        owner.TakeHeal(Constant.MEDICINE_HEAL);
     }
 }
