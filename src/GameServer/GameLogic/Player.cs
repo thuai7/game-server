@@ -27,8 +27,10 @@ public class Player : IPlayer
         {
             Health -= PlayerArmor.Hurt(damage);
         }
-        else Health -= damage;
-        
+        else
+        {
+            Health -= damage;
+        }
     }
 
     public void playerMove(Position position)
@@ -38,12 +40,15 @@ public class Player : IPlayer
 
     public bool playerAttack()
     {
-        if (PlayerBackPack.FindItems(ItemKind.Bullet,1)> 0)
+        if (PlayerBackPack.FindItems(ItemKind.Bullet, 1) > 0)
         {
-            PlayerBackPack.RemoveItems(ItemKind.Bullet, 1,1);
+            PlayerBackPack.RemoveItems(ItemKind.Bullet, 1, 1);
             return true;
         }
-        else return false;
+        else
+        {
+            return false;
+        }
     }
 
     public bool playerUseGrenade()
@@ -53,7 +58,10 @@ public class Player : IPlayer
             PlayerBackPack.RemoveItems(ItemKind.Grenade, 1, 1);
             return true;
         }
-        else return false;
+        else
+        {
+            return false;
+        }
     }
 
     public bool playerUseMedicine()
@@ -66,7 +74,10 @@ public class Player : IPlayer
 
             return true;
         }
-        else return false;
+        else
+        {
+            return false;
+        }
     }
 
     public bool playerChangeWeapon()
