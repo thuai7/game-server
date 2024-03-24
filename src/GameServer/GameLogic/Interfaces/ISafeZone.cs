@@ -7,7 +7,7 @@ public interface ISafeZone
     /// <summary>
     /// The center of the safe zone.
     /// </summary>
-    public Point<float> Center { get; }
+    public Position Center { get; }
 
     /// <summary>
     /// The maximum radius of the safe zone.
@@ -40,5 +40,5 @@ public interface ISafeZone
     /// </summary>
     /// <param name="point"></param>
     /// <returns></returns>
-    public bool IsInSafeZone(Point<float> point);
+    public bool IsInSafeZone(Position point);
 }

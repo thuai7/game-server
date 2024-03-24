@@ -71,4 +71,16 @@ public class BackPack : IBackPack
             }
         }
     }
+
+    public int FindItems(IItem.ItemKind kind, int itemSpecificId)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].Kind == kind && Items[i].ItemSpecificId == itemSpecificId)
+            {
+                return Items[i].Count;
+            }
+        }
+        return 0;
+    }
 }

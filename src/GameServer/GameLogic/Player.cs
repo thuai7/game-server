@@ -1,3 +1,5 @@
+using static GameServer.GameLogic.IItem;
+
 namespace GameServer.GameLogic;
 
 public class Player : IPlayer
@@ -18,9 +20,58 @@ public class Player : IPlayer
         PlayerPosition = position;
     }
 
+
     public void TakeDamage(int damage)
     {
-        //TODO: implement
+        if (PlayerArmor != null)
+        {
+            Health -= PlayerArmor.Hurt(damage);
+        }
+        else Health -= damage;
+        
+    }
+
+    public void playerMove(Position position)
+    {
+        PlayerPosition = position;
+    }
+
+    public bool playerAttack()
+    {
+        if (PlayerBackPack.FindItems(ItemKind.Bullet,1)> 0)
+        {
+            PlayerBackPack.RemoveItems(ItemKind.Bullet, 1,1);
+            return true;
+        }
+        else return false;
+    }
+
+    public bool playerUseGrenade()
+    {
+        if (PlayerBackPack.FindItems(ItemKind.Grenade, 1) > 0)
+        {
+            PlayerBackPack.RemoveItems(ItemKind.Grenade, 1, 1);
+            return true;
+        }
+        else return false;
+    }
+
+    public bool playerUseMedicine()
+    {
+        if (PlayerBackPack.FindItems(ItemKind.Medicine, 1) > 0)
+        {
+            PlayerBackPack.RemoveItems(ItemKind.Medicine, 1, 1);
+
+            //Health += Medicine.Heal;
+
+            return true;
+        }
+        else return false;
+    }
+
+    public bool playerChangeWeapon()
+    {
+        // TODO:Implement
         throw new NotImplementedException();
     }
 }
