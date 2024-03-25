@@ -15,17 +15,17 @@ class Program
 
         Version version = typeof(Program).Assembly.GetName().Version ?? new Version(0, 0, 0, 0);
         _logger.Information($"THUAI7 GameServer v{version.Major}.{version.Minor}.{version.Build}");
-        _logger.Information("Copyright (c) 2024 THUAI7 Team");
+        _logger.Information("Copyright (c) 2024 THUASTA");
 
         try
         {
-            // TODO: Create and activate game server
+            // TODO: Activate and run game server
+
+            throw new NotImplementedException("GameServer is not implemented yet.");
         }
         catch (Exception ex)
         {
-            _logger.Fatal(ex, "Game server crashed.");
+            _logger.Fatal($"Game server crashed with exception: {ex.Message}");
         }
-
-        Task.Delay(-1).Wait();
     }
 }
