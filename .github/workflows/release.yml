@@ -1,6 +1,6 @@
 on:
   release:
-    types: 
+    types:
       - published
 
 jobs:
@@ -23,9 +23,10 @@ jobs:
           dotnet-version: 6.0.x
 
       - run: |
+          VERSION=$(echo ${GITHUB_REF#refs/tags/})
           dotnet publish src/GameServer/GameServer.csproj -c Release -o bin \
           --sc false -r ${{ matrix.runtime }} -p:DebugType=none \
-          -p:PublishSingleFile=true
+          -p:PublishSingleFile=true -p:Version=$VERSION
 
       - run: |
           cp CHANGELOG.md LICENSE README.md bin
@@ -67,7 +68,7 @@ jobs:
           cd bin
           zip -r ../gameserver-${{ matrix.runtime }}.zip *
           cd ..
-  
+
       - name: Pack artifact (Others)
         if: startsWith(matrix.runtime, 'win') == false
         run: |

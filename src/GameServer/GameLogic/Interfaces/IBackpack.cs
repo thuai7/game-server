@@ -34,4 +34,11 @@ public interface IBackPack
     /// <param name="itemSpecificId"></param>
     /// <param name="count"></param>
     public void RemoveItems(IItem.ItemKind kind, int itemSpecificId, int count);
+
+    /// <summary>
+    /// Remove items from the backpack£¬return it's count
+    /// </summary>
+    /// <param name="kind"></param>
+    /// <param name="itemSpecificId"></param>
+    public int FindItems(IItem.ItemKind kind, int itemSpecificId);
 }

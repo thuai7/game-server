@@ -4,7 +4,7 @@ namespace GameServer.GameLogic;
 
 public class SafeZone : ISafeZone
 {
-    public Point<float> Center { get; private set; }
+    public Position Center { get; private set; }
     public float MaxRadius { get; }
     public float Radius { get; private set; }
     public float RadiusChangedPerTick
@@ -21,7 +21,7 @@ public class SafeZone : ISafeZone
     /// <param name="center"></param>
     /// <param name="maxRadius"></param>
     /// <param name="ticksUntilDisappear"></param>
-    public SafeZone(Point<float> center, float maxRadius, int ticksUntilDisappear)
+    public SafeZone(Position center, float maxRadius, int ticksUntilDisappear)
     {
         Center = center;
         MaxRadius = maxRadius;
@@ -32,8 +32,8 @@ public class SafeZone : ISafeZone
     public void Update()
     {
         // Update center. Randomly move the cehnter of the safe zone.
-        float newX = (float)(_random.NextDouble() - 0.5) * RadiusChangedPerTick + Center.X;
-        float newY = (float)(_random.NextDouble() - 0.5) * RadiusChangedPerTick + Center.Y;
+        double newX = (float)(_random.NextDouble() - 0.5) * RadiusChangedPerTick + Center.x;
+        double newY = (float)(_random.NextDouble() - 0.5) * RadiusChangedPerTick + Center.y;
         Center = new(newX, newY);
 
         // Update radius
@@ -48,9 +48,9 @@ public class SafeZone : ISafeZone
         }
     }
 
-    public bool IsInSafeZone(Point<float> point)
+    public bool IsInSafeZone(Position point)
     {
-        float distance = (float)Math.Sqrt(Math.Pow(Center.X - point.X, 2) + Math.Pow(Center.Y - point.Y, 2));
+        float distance = (float)Math.Sqrt(Math.Pow(Center.x - point.x, 2) + Math.Pow(Center.y - point.y, 2));
         return distance <= Radius;
     }
 }

@@ -1,13 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GameServer.GameLogic
+﻿namespace GameServer.GameLogic
 {
     public class Position
     {
@@ -18,6 +9,10 @@ namespace GameServer.GameLogic
         {
             this.x = x;
             this.y = y;
+        }
+        public static double Distance(Position a, Position b)
+        {
+            return Math.Sqrt(Math.Pow(a.x - b.x, 2) + Math.Pow(a.y - b.y, 2));
         }
     }
 }
