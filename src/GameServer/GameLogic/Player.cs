@@ -5,8 +5,8 @@ namespace GameServer.GameLogic;
 public class Player : IPlayer
 {
     // TODO: Implement
-    public int Health{ get; set;}
-    public double Speed{ get; set;}
+    public int Health { get; set; }
+    public double Speed { get; set; }
     public Armor? PlayerArmor { get; set; }
     public Position PlayerPosition { get; set; }
     public IWeapon PlayerWeapon { get; set; }
