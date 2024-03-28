@@ -4,7 +4,7 @@ namespace GameServer.GameLogic;
 
 public class WeaponFactory
 {
-    static IWeapon CreateFromItem(IItem Item)
+    public static IWeapon CreateFromItem(IItem Item)
     {
         if (Item.Kind != IItem.ItemKind.Weapon)
         {
@@ -18,7 +18,7 @@ public class WeaponFactory
         };
     }
 
-    static IItem ToItem(IWeapon weapon)
+    public static IItem ToItem(IWeapon weapon)
     {
         return weapon switch
         {
